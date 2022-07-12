@@ -6,7 +6,7 @@
 
 @layer base {
   html, body {
-    @apply antialiased;
+    @apply antialiased bg-gray-50;
   }
 }
 

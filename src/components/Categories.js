@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+
+import Title from './ui/Title';
+import categoryData from "api/categories.json";
+import Category from "./ui/Category";
 
 const Categories = () => {
-  return (
-    <div>Categories</div>
-  )
-}
+  const [categories, setCategories] = useState([]);
 
-export default Categories
+  useEffect(() => {
+    const getData = async () => {
+      // const categories = await fetch('../api/categories.json');
+      // const response = await categories.json();
+      // console.log(response)
+      setCategories(categoryData);
+    };
+
+    getData();
+  }, []);
+
+  return (
+    <div className="bg-white py-4">
+      <div className="container mx-auto">
+        <Title>Kategoriler</Title>
+        <div className="grid grid-cols-10">
+          {!categories.length && <p>Yükleniyor...</p>}
+          {categories &&
+            categories.map((category, index) => (
+              <Category key={index} category={category} />
+            ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Categories;
