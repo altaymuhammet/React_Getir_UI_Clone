@@ -18,6 +18,12 @@ module.exports = {
       height: theme => ({
         'height-500' : '500px',
       }),
+      backgroundImage: theme => ({
+        'mobile-app': 'url(https://getir.com/_next/static/images/doodle-d659f9f1fd505c811c2331fe3ffddd5f.png)'
+      }),
+      boxShadow: {
+        'customShadow' : '0px 0px 10px -2px rgba(166,161,166,1)'
+      }
     },
   },
   plugins: [],

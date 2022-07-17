@@ -2,9 +2,9 @@ import React from "react";
 
 const Banner = ({ banner: { id, image } }) => {
   return (
-    <div className="px-2">
+    <div className=" md:px-2">
       <a href="#">
-        <img src={image} id={id} className="rounded-lg" />
+        <img src={image} id={id} className=" md:rounded-lg" />
       </a>
     </div>
   );
